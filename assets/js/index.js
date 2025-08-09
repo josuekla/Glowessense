@@ -18,6 +18,7 @@ AOS.init({
                 mobileMenu.classList.add('hidden');
             });
         });
+        
         // Efeito de scroll no header
         window.addEventListener('scroll', function() {
         const scrollPosition = window.scrollY;

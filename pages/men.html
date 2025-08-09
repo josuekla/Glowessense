@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Linha Masculina - Glow Essence</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Animate On Scroll Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="logo.png" type="image/png">
+
+    <!-- Custom Styles -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1A202C; /* Fundo escuro - Carvão */
+            color: #E2E8F0; /* Texto claro - Cinza azulado */
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: #FFFFFF;
+        }
+        .header-bg {
+            background-color: #2D3748; /* Cinza ardósia */
+        }
+        .btn-primary {
+            background-color: #E2E8F0;
+            color: #1A202C;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+        .product-card {
+            background-color: #2D3748; /* Cinza ardósia */
+            border: 1px solid #4A5568; /* Borda sutil */
+            transition: all 0.4s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            border-color: #718096;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="header-bg sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6">
+            <nav class="flex justify-between items-center py-4">
+                <!-- LOGO -->
+                <a href="/index.html" title="Voltar para a Página Inicial">
+                    <img src="/assets/logo/logo_oficial.png" alt="Logo Glow+Essence" class="h-14 md:h-16 brightness-0 invert">
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="index.html#essencia" class="text-gray-300 hover:text-white transition-colors">Nossa Essência</a>
+                    <a href="index.html#produtos" class="text-gray-300 hover:text-white transition-colors">Outros Produtos</a>
+                    <a href="index.html#contato" class="text-gray-300 hover:text-white transition-colors">Contato</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 focus:outline-none">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden header-bg/95 backdrop-blur-md">
+            <div class="px-6 py-4 space-y-4">
+                <a href="index.html#essencia" class="block py-2 text-gray-300 hover:text-white">Nossa Essência</a>
+                <a href="index.html#produtos" class="block py-2 text-gray-300 hover:text-white">Outros Produtos</a>
+                <a href="index.html#contato" class="block py-2 text-gray-300 hover:text-white">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Catalog Section -->
+        <section id="catalogo" class="py-16 md:py-20">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16" data-aos="fade-up">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold">Linha Masculina</h1>
+                    <p class="text-lg text-gray-400 max-w-2xl mx-auto mt-4">Produtos essenciais para o cuidado e estilo do homem moderno.</p>
+                </div>
+
+                <!-- ATENÇÃO: Substitua 'SEUNUMERO' pelo seu número de WhatsApp com DDD (ex: 86999998888) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+
+                    <!-- Produto 1 -->
+                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://britosbarbearia.com.br/wp-content/uploads/2022/03/oleo-Para-Barba.jpg" class="w-full object-cover" alt="Óleo de Barba">
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl mb-1">Óleo de Barba</h3>
+                            <p class="font-semibold text-lg mb-2 text-white">R$ 89,90</p>
+                            <p class="text-gray-400 mb-6 text-sm h-12">Hidrata, amacia e dá brilho aos fios da barba.</p>
+                            <a href="https://wa.me/5586999603307?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Óleo%20de%20Barba." target="_blank" class="btn-primary py-2 px-8 rounded-md text-sm">
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Produto 2 -->
+                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://www.drogaraia.com.br/_next/image?url=https%3A%2F%2Fproduct-data.raiadrogasil.io%2Fimages%2F3672165.webp&w=3840&q=40" class="w-full object-cover" alt="Balm Modelador">
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl mb-1">Balm Modelador</h3>
+                            <p class="font-semibold text-lg mb-2 text-white">R$ 75,90</p>
+                            <p class="text-gray-400 mb-6 text-sm h-12">Modela a barba e hidrata a pele, evitando irritações.</p>
+                            <a href="https://wa.me/5586999603307?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Balm%20Modelador." target="_blank" class="btn-primary py-2 px-8 rounded-md text-sm">
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Produto 3 -->
+                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://images.ctfassets.net/f2o0m7zxveci/3L2iLTbtKPQvNUtj8DUHZP/012dde2d296354abe91b9b4aeba03ff6/info-product-02_2x.png" class="w-full object-cover" alt="Shampoo para Barba">
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl mb-1">Shampoo para Barba</h3>
+                            <p class="font-semibold text-lg mb-2 text-white">R$ 69,90</p>
+                            <p class="text-gray-400 mb-6 text-sm h-12">Limpeza profunda e refrescante para os fios e a pele.</p>
+                            <a href="https://wa.me/5586999603307?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Shampoo%20para%20Barba." target="_blank" class="btn-primary py-2 px-8 rounded-md text-sm">
+                               Comprar
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Produto 4 -->
+                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://production.na01.natura.com/on/demandware.static/-/Sites-NatBrazil-Library/default/dwe40bf3de/Categorias/NE%20Natura%20Homem/152330.jpg" class="w-full h- object-cover" alt="Hidratante Facial">
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl mb-1">Hidratante Facial</h3>
+                            <p class="font-semibold text-lg mb-2 text-white">R$ 119,90</p>
+                            <p class="text-gray-400 mb-6 text-sm h-12">Fórmula leve com proteção solar e controle de oleosidade.</p>
+                            <a href="https://wa.me/5586999603307?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Hidratante%20Facial." target="_blank" class="btn-primary py-2 px-8 rounded-md text-sm">
+                               Comprar
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Produto 5 -->
+                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_988918-MLB86996728551_062025-O.webp" alt="Gel de Limpeza Facial">
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl mb-1">Gel de Limpeza</h3>
+                            <p class="font-semibold text-lg mb-2 text-white">R$ 85,00</p>
+                            <p class="text-gray-400 mb-6 text-sm h-12">Limpa os poros e remove impurezas sem ressecar a pele.</p>
+                            <a href="https://wa.me/5586999603307?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Gel%20de%20Limpeza." target="_blank" class="btn-primary py-2 px-8 rounded-md text-sm">
+                               Comprar
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Produto 6 -->
+                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://www.salonline.com.br/ccstore/v1/images/?source=/file/v4521646649604462473/products/32246%20-%20SKU1.jpg&height=940&width=940" class="w-full object-cover" alt="Cera Modeladora para Cabelo">
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl mb-1">Cera Modeladora</h3>
+                            <p class="font-semibold text-lg mb-2 text-white">R$ 95,90</p>
+                            <p class="text-gray-400 mb-6 text-sm h-12">Fixação forte com acabamento matte para o cabelo.</p>
+                            <a href="https://wa.me/5586999603307?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Cera%20Modeladora." target="_blank" class="btn-primary py-2 px-8 rounded-md text-sm">
+                               Comprar
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="header-bg py-12">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <a href="/index.html">
+                 <img src="/assets/logo/logo_oficial.png" alt="Logo Glow Essence" class="h-16 mb-4 mx-auto brightness-0 invert">
+            </a>
+            <p class="mb-6">Curadoria em Beleza e Estilo | Parnaíba - PI</p>
+            <div class="flex justify-center space-x-6 my-6">
+                <a href="#" aria-label="Instagram" class="hover:text-white transition-colors text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/5586999603307" aria-label="WhatsApp" class="hover:text-white transition-colors text-2xl"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="text-sm text-gray-500">&copy; 2025 Glow Essence. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Adicione antes do fechamento do </body> -->
+<a href="/index.html" class="fixed bottom-6 left-6 bg-gray-800 text-white p-3 rounded-full shadow-lg z-50 hover:bg-gray-700 transition-all group">
+    <i class="fas fa-arrow-left text-xl"></i>
+    <span class="absolute left-full top-1/2 transform -translate-y-1/2 ml-2 bg-gray-800 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Voltar ao início</span>
+</a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+        });
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelectorAll('#mobile-menu a');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<form class="mt-10 flex flex-col space-y-4" action="mailto:contato@glowessence.com.br" method="POST" enctype="text/plain">
+                    <input type="text" name="nome" placeholder="Seu nome" required
+                        class="p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-600" />
+                    <input type="email" name="email" placeholder="Seu email" required
+                        class="p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-600" />
+                    <textarea name="mensagem" placeholder="Sua mensagem" rows="4" required
+                        class="p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-600"></textarea>
+                    <button type="submit"
+                        class="bg-[#2D2D2D] text-white py-3 rounded hover:bg-black transition">Enviar</button>
+                    </form>
+
+
+Formulário para o INDEX.HTML

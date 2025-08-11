@@ -66,3 +66,7 @@ background-color: black;
     transition: opacity 1s ease, visibility 1s ease;
     z-index: 2;
 }
+
+.text-dourado{
+    color: #dabc69;
+}

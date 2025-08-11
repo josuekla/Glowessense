@@ -35,7 +35,7 @@
 <body class="antialiased">
 
     <!-- Header -->
-    <header class="bg-beige sticky top-0 z-50 shadow-sm">
+    <header class="bg-beige sticky top-0 z-50 shadow-sm" id="header_main">
         <div class="container mx-auto px-6">
             <nav class="flex justify-between items-center py-3">
                 <!-- LOGO com efeito hover -->
@@ -46,15 +46,21 @@
 
                 <!-- Desktop Menu com destaque -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#essencia" class="relative text-gray-700 hover:text-black transition-colors menu-link relative text-gray-700 hover:text-black transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-black after:transition-all hover:after:w-full">Nossa
+                    <a href="#essencia"
+                        class="relative text-gray-700 hover:text-black transition-colors menu-link relative text-gray-700 hover:text-black transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-black after:transition-all hover:after:w-full">Nossa
                         Essência</a>
-                    <a href="#produtos" class="relative text-gray-700 hover:text-black transition-colors menu-link relative text-gray-700 hover:text-black transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-black after:transition-all hover:after:w-full">Catálogo</a>
-                    <a href="#contato" class="relative text-gray-700 hover:text-black transition-colors menu-link relative text-gray-700 hover:text-black transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-black after:transition-all hover:after:w-full">Contato</a>
+                    <a href="#produtos"
+                        class="relative text-gray-700 hover:text-black transition-colors menu-link relative text-gray-700 hover:text-black transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-black after:transition-all hover:after:w-full">Catálogo</a>
+                    <a href="#contato"
+                        class="relative text-gray-700 hover:text-black transition-colors menu-link relative text-gray-700 hover:text-black transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-black after:transition-all hover:after:w-full">Contato</a>
                 </div>
 
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
                     </button>
                 </div>
             </nav>
@@ -68,32 +74,91 @@
             </div>
         </div>
 
-            </nav>
+        </nav>
         </div>
     </header>
 
     <main>
+
         <!-- Hero Section (Essência) -->
-        <section id="essencia" data-section="essencia" class="py-16 md:py-20">
+        <!-- Hero Section (Essência) -->
+        <section id="essencia" class="py-16 md:py-20">
             <div class="container mx-auto px-6">
-                <!-- Bloco Maior -->
-                <div class="bg-beige p-6 sm:p-8 md:p-12 rounded-lg" data-aos="fade-up">
+                <div class="bg-beige p-6 sm:p-8 md:p-12 rounded-lg shadow-lg" data-aos="fade-up">
+
+                    <!-- Texto + Imagem -->
                     <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+
+                        <!-- Texto -->
                         <div class="md:w-1/2">
-                            <h1 class="text-4xl sm:text-5xl md:text-6xl mb-6">Nascida para realçar sua essência.</h1>
-                            <div class="text-base sm:text-lg text-gray-700 space-y-4 leading-relaxed">
-                                <p>A Glow Essence nasceu da paixão por realçar a beleza única de cada pessoa. Nossa
-                                    curadoria de maquiagens e acessórios é uma celebração da sua essência, combinando
-                                    estilo, autocuidado e as últimas tendências em um só lugar.</p>
-                            </div>
+                            <h1
+                                class="text-4xl sm:text-5xl md:text-6xl mb-6 font-semibold tracking-tight text-gray-800">
+                                Nascida para realçar sua essência.
+                            </h1>
+                            <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+                                A Glow Essence nasceu da paixão por realçar a beleza única de cada pessoa. Nossa
+                                curadoria de maquiagens e acessórios é uma celebração da sua essência, combinando
+                                estilo, autocuidado e as últimas tendências em um só lugar.
+                            </p>
                         </div>
-                        <div class="md:w-1/2 w-full mt-6 md:mt-0">
+
+                        <!-- Imagem -->
+                        <div class="md:w-1/2">
                             <img src="flavia-profile.png" alt="Mulher com maquiagem elegante"
-                                class="w-full h-full object-cover rounded-md shadow-lg fa-border shadow-lg">
+                                class="w-full h-full object-cover rounded-md shadow-lg">
                         </div>
                     </div>
+
+                    <!-- Missão / Valores / Visão -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 mt-10">
+                        <div
+                            class="flex flex-col items-start space-y-3 group hover:text-green-700 transition-colors cursor-default">
+                            <div class="text-green-700 text-4xl mb-1">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3
+                                class="text-xl font-semibold text-gray-900 group-hover:text-green-700 transition-colors">
+                                Missão</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Inspirar confiança e beleza autêntica, promovendo produtos que valorizam a
+                                individualidade.
+                            </p>
+                        </div>
+                        <div
+                            class="flex flex-col items-start space-y-3 group hover:text-green-700 transition-colors cursor-default">
+                            <div class="text-green-700 text-4xl mb-1">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3
+                                class="text-xl font-semibold text-gray-900 group-hover:text-green-700 transition-colors">
+                                Valores</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Sustentabilidade, ética, inovação e cuidado genuíno com nossos clientes e o meio
+                                ambiente.
+                            </p>
+                        </div>
+                        <div
+                            class="flex flex-col items-start space-y-3 group hover:text-green-700 transition-colors cursor-default">
+                            <div class="text-green-700 text-4xl mb-1">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3
+                                class="text-xl font-semibold text-gray-900 group-hover:text-green-700 transition-colors">
+                                Visão</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Ser referência nacional em beleza consciente, oferecendo experiências únicas e produtos
+                                de alta qualidade.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+        </section>
+
+
+
+        </div>
         </section>
 
         <!-- Products Section -->
@@ -105,7 +170,7 @@
                         necessidade.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
                     <!-- Produto 1: Maquiagem Feminina -->
                     <div class="product-card rounded-lg overflow-hidden h-100 md:h-15" data-aos="fade-up"
                         data-aos-delay="100">
@@ -120,7 +185,36 @@
                         </div>
                     </div>
 
-                    <!-- Produto 2: Cuidados Masculinos -->
+                    <!-- Produto 2: Acessórios -->
+                    <div class="product-card rounded-lg overflow-hidden flex flex-col" data-aos="fade-up"
+                        data-aos-delay="300">
+                        <img src="https://epocacosmeticos.vteximg.com.br/arquivos/ids/786616-800-800/17412970797070.jpg?v=638769550318600000"
+                            alt="Acessórios" class="w-full h-80 object-cover">
+                        <div class="p-8 text-center flex flex-col flex-center items-center">
+                            <h3 class="text-3xl mb-2">Acessórios</h3>
+                            <p class="text-gray-600 mb-6 h-12">Peças selecionadas que complementam e definem seu estilo.
+                            </p>
+                            <a href="pages/acess.html" class="btn-outline py-2  px-4 rounded-full w-40">
+                                Saiba Mais
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Produto 3: Linha infantil -->
+                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                        <img src="https://roteirobaby.com.br/wp-content/uploads/2020/03/loccitane-infantil-.jpg"
+                            class="w-full h-80 object-cover" alt="Linha Infantil">
+                        <div class="p-8 text-center">
+                            <h3 class="text-3xl mb-2">Linha Infantil</h3>
+                            <p class="text-gray-600 mb-6 min-h-[4.5rem] sm:min-h-[3rem]">Cuidado e diversão para os
+                                pequenos.</p>
+                            <a href="pages/kids.html" class="btn-outline py-2 px-8 rounded-full">
+                                Saiba Mais
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Produto 4: Cuidados Masculinos -->
                     <div class="product-card rounded-lg overflow-hidden h-100 md:h-15" data-aos="fade-up"
                         data-aos-delay="200">
                         <img src="https://www.robertodutra.com/wp-content/uploads/2019/08/x_neon2.jpg"
@@ -135,19 +229,10 @@
                         </div>
                     </div>
 
-                    <!-- Produto 3: Acessórios -->
-                    <div class="product-card rounded-lg overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="300">
-                        <img src="https://epocacosmeticos.vteximg.com.br/arquivos/ids/786616-800-800/17412970797070.jpg?v=638769550318600000"
-                            alt="Acessórios" class="w-full h-80 object-cover">
-                        <div class="p-8 text-center flex flex-col flex-center items-center">
-                            <h3 class="text-3xl mb-2">Acessórios</h3>
-                            <p class="text-gray-600 mb-6 h-12">Peças selecionadas que complementam e definem seu estilo.
-                            </p>
-                            <a href="pages/acess.html" class="btn-outline py-2  px-4 rounded-full w-40">
-                                Saiba Mais
-                            </a>
-                        </div>
-                    </div>
+
+
+
+
                 </div>
             </div>
         </section>
@@ -162,7 +247,7 @@
                     para uma consultoria de beleza. Estamos à sua disposição.
                 </p>
                 <div data-aos="fade-up" data-aos-delay="200">
-                    <a href="https://wa.me/558699603307?text=Olá gostaria de conhecer mais os produtos do Glow Essence!"
+                    <a href="https://wa.me/5586999616547?text=Olá gostaria de conhecer mais os produtos do Glow Essence!"
                         target="_blank"
                         class="inline-block bg-[#45B08C] text-white text-lg py-4 px-12 rounded-md transition-transform hover:scale-105">
                         <i class="fab fa-whatsapp mr-2"></i> Fale Conosco
@@ -191,7 +276,7 @@
             <div class="flex justify-center space-x-6 my-6">
                 <a href="https://www.instagram.com/glow___.essence/" target="_blank" aria-label="Instagram"
                     class="hover:text-black transition-colors text-2xl"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/5586999603307" aria-label="WhatsApp"
+                <a href="https://wa.me/5586999616547" aria-label="WhatsApp"
                     class="hover:text-black transition-colors text-2xl"><i class="fab fa-whatsapp"></i></a>
             </div>
             <p class="text-sm text-gray-400">&copy; 2025 Glow Essence. Todos os direitos reservados.</p>

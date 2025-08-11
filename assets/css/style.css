@@ -60,29 +60,6 @@ width: 100%;
 background-color: black;
 }
 
-.header-transparent {
-    background-color: transparent !important;
-    box-shadow: none !important;
-}
-
-.header-scrolled {
-    background-color: #F3E5D2 !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
-}
-
-.section-active {
-    color: black !important;
-}
-
-.section-active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 1px;
-    width: 100%;
-    background-color: black;
-}
 
 
 #mobile-menu-button {

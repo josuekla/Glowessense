@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Maquiagem - Glow Essence</title>
+    <meta name="description" content="Explore nossa coleção exclusiva de maquiagem premium. Base, batom, máscara de cílios e muito mais. Glow Essence - Curadoria em Beleza e Estilo.">
+    <meta name="keywords" content="maquiagem, base, batom, máscara de cílios, beleza, cosméticos, Parnaíba">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Catálogo de Maquiagem - Glow Essence">
+    <meta property="og:description" content="Descubra produtos de maquiagem de alta qualidade">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose-gold': '#E8B4B8',
+                        'dusty-rose': '#D4A574',
+                        'warm-beige': '#F5F2E8'
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-soft': 'pulse-soft 2s infinite',
+                        'slide-up': 'slide-up 0.6s ease-out'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        'pulse-soft': {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.02)' }
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border-color: rgba(236, 72, 153, 0.2);
+        }
+        
+        .product-image {
+            transition: transform 0.6s ease;
+            overflow: hidden;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover:before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(236, 72, 153, 0.4);
+        }
+        
+        .loading-skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #f3e8ff 100%);
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .menu-link {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ec4899, #be185d);
+            transition: width 0.3s ease;
+        }
+        
+        .menu-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="antialiased bg-gradient-to-br from-pink-50 via-white to-purple-50">
+
+    <!-- Header with improved glass effect -->
+    <header class="glass-effect sticky top-0 z-50 border-b border-white/20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <nav class="flex justify-between items-center py-4">
+                <!-- Logo with animation -->
+                <a href="#" class="group" aria-label="Glow Essence - Home">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                            <i class="fas fa-gem text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold heading-font bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Glow Essence</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <nav class="flex items-center space-x-8">
+                        <a href="#" class="menu-link text-gray-700 hover:text-pink-600 transition-colors font-medium">Nossa Essência</a>
+                        <a href="#catalogo" class="menu-link text-gray-700 hover:text-pink-600 transition-colors font-medium">Catálogo</a>
+                        <a href="#contato" class="menu-link text-gray-700 hover:text-pink-600 transition-colors font-medium">Contato</a>
+                    </nav>
+                    
+                    <!-- Cart Button -->
+                    <button class="relative p-2 hover:bg-pink-50 rounded-full transition-colors" aria-label="Carrinho de compras">
+                        <i class="fas fa-shopping-bag text-xl text-gray-700"></i>
+                        <span class="absolute -top-1 -right-1 bg-pink-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate-pulse">3</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <button class="relative p-2 hover:bg-pink-50 rounded-full transition-colors" aria-label="Carrinho de compras">
+                        <i class="fas fa-shopping-bag text-xl text-gray-700"></i>
+                        <span class="absolute -top-1 -right-1 bg-pink-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </button>
+                    <button id="mobile-menu-button" class="p-2 rounded-lg hover:bg-pink-50 transition-colors" aria-label="Menu">
+                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#" class="text-gray-700 hover:text-pink-600 transition-colors py-2 border-b border-gray-100">Nossa Essência</a>
+                    <a href="#catalogo" class="text-gray-700 hover:text-pink-600 transition-colors py-2 border-b border-gray-100">Catálogo</a>
+                    <a href="#contato" class="text-gray-700 hover:text-pink-600 transition-colors py-2">Contato</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with improved design -->
+        <section class="hero-gradient py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 text-center">
+                <div class="animate-slide-up">
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold heading-font mb-6">
+                        <span class="bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                            Catálogo de Maquiagem
+                        </span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+                        Explore nossa seleção curada de produtos premium para criar looks incríveis, do clássico ao moderno, com qualidade incomparável.
+                    </p>
+                    
+                    <!-- Filter buttons with improved styling -->
+                    <div class="flex flex-wrap justify-center gap-3 mb-8">
+                        <button class="filter-btn px-6 py-3 rounded-full bg-pink-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 font-medium" data-filter="all">
+                            Todos os Produtos
+                        </button>
+                        <button class="filter-btn px-6 py-3 rounded-full bg-white text-gray-700 border border-gray-200 hover:border-pink-300 hover:text-pink-600 transition-all duration-300 font-medium" data-filter="base">
+                            Base & Corretivo
+                        </button>
+                        <button class="filter-btn px-6 py-3 rounded-full bg-white text-gray-700 border border-gray-200 hover:border-pink-300 hover:text-pink-600 transition-all duration-300 font-medium" data-filter="olhos">
+                            Olhos
+                        </button>
+                        <button class="filter-btn px-6 py-3 rounded-full bg-white text-gray-700 border border-gray-200 hover:border-pink-300 hover:text-pink-600 transition-all duration-300 font-medium" data-filter="labios">
+                            Lábios
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section with improved layout -->
+        <section id="catalogo" class="py-16 md:py-20">
+            <div class="container mx-auto px-4 sm:px-6">
+                <!-- Loading skeleton (hidden by default) -->
+                <div id="loading-skeleton" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <div class="loading-skeleton h-96 rounded-2xl"></div>
+                    <div class="loading-skeleton h-96 rounded-2xl"></div>
+                    <div class="loading-skeleton h-96 rounded-2xl"></div>
+                    <div class="loading-skeleton h-96 rounded-2xl"></div>
+                </div>
+                
+                <!-- Products Grid -->
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    
+                    <!-- Product 1 -->
+                    <article class="product-card rounded-2xl overflow-hidden shadow-lg animate-float" data-category="base">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=500&fit=crop&crop=center" 
+                                 class="w-full h-80 object-cover transition-transform duration-500" 
+                                 alt="Base de Alta Cobertura" 
+                                 loading="lazy">
+                            <div class="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Novo
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 heading-font">Base de Alta Cobertura</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">A nova base da Coleção Angel Wings, desenvolvida para trazer resistência, hidratação e viço à sua pele.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-1">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm">(4.8)</span>
+                                </div>
+                                <span class="text-lg font-bold text-pink-600">R$ 89,90</span>
+                            </div>
+                            <button onclick="addToCart('Base de Alta Cobertura', 89.90)" class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium relative overflow-hidden">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card rounded-2xl overflow-hidden shadow-lg" data-category="base" style="animation-delay: 0.1s">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=500&fit=crop&crop=center" 
+                                 class="w-full h-80 object-cover transition-transform duration-500" 
+                                 alt="Base Líquida Soft Blend" 
+                                 loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 heading-font">Base Líquida Soft Blend</h3>
+                            <p class="text-gray-600 text-sm mb-4">Base leve e fluida com cobertura média, garantindo acabamento natural e radiante.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-1">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="far fa-star text-sm"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm">(4.2)</span>
+                                </div>
+                                <span class="text-lg font-bold text-pink-600">R$ 69,90</span>
+                            </div>
+                            <button onclick="addToCart('Base Líquida Soft Blend', 69.90)" class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card rounded-2xl overflow-hidden shadow-lg" data-category="base" style="animation-delay: 0.2s">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1631730486887-4d76b7c90c07?w=400&h=500&fit=crop&crop=center" 
+                                 class="w-full h-80 object-cover transition-transform duration-500" 
+                                 alt="Base Líquida Natural" 
+                                 loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 heading-font">Base Líquida Natural</h3>
+                            <p class="text-gray-600 text-sm mb-4">Fixação perfeita com hidratação e cobertura homogênea, resistente e natural.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-1">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm">(4.9)</span>
+                                </div>
+                                <span class="text-lg font-bold text-pink-600">R$ 79,90</span>
+                            </div>
+                            <button onclick="addToCart('Base Líquida Natural', 79.90)" class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product 4 -->
+                    <article class="product-card rounded-2xl overflow-hidden shadow-lg" data-category="olhos" style="animation-delay: 0.3s">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1583241800698-618020179495?w=400&h=500&fit=crop&crop=center" 
+                                 class="w-full h-80 object-cover transition-transform duration-500" 
+                                 alt="Máscara para Cílios" 
+                                 loading="lazy">
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Bestseller
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 heading-font">Máscara para Cílios</h3>
+                            <p class="text-gray-600 text-sm mb-4">Máscara No Panda com pincel curvado para volume, definição e curvatura perfeita.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-1">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm">(4.7)</span>
+                                </div>
+                                <span class="text-lg font-bold text-pink-600">R$ 49,90</span>
+                            </div>
+                            <button onclick="addToCart('Máscara para Cílios', 49.90)" class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product 5 -->
+                    <article class="product-card rounded-2xl overflow-hidden shadow-lg" data-category="labios" style="animation-delay: 0.4s">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=400&h=500&fit=crop&crop=center" 
+                                 class="w-full h-80 object-cover transition-transform duration-500" 
+                                 alt="Batom Premium" 
+                                 loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 heading-font">Batom Premium</h3>
+                            <p class="text-gray-600 text-sm mb-4">Combinação ideal entre cobertura intensa e conforto, disponível em acabamentos mate e glossy.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-1">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm">(4.6)</span>
+                                </div>
+                                <span class="text-lg font-bold text-pink-600">R$ 39,90</span>
+                            </div>
+                            <button onclick="addToCart('Batom Premium', 39.90)" class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product 6 -->
+                    <article class="product-card rounded-2xl overflow-hidden shadow-lg" data-category="base" style="animation-delay: 0.5s">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1609205078045-7c5f48a8ce8e?w=400&h=500&fit=crop&crop=center" 
+                                 class="w-full h-80 object-cover transition-transform duration-500" 
+                                 alt="Sérum Glow" 
+                                 loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 heading-font">Sérum Glow</h3>
+                            <p class="text-gray-600 text-sm mb-4">Sérum inovador para pele naturalmente iluminada com brilho radiante e aspecto saudável.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-1">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="far fa-star text-sm"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm">(4.3)</span>
+                                </div>
+                                <span class="text-lg font-bold text-pink-600">R$ 99,90</span>
+                            </div>
+                            <button onclick="addToCart('Sérum Glow', 99.90)" class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-12">
+                    <button id="load-more" class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-xl font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-plus mr-2"></i>
+                        Carregar Mais Produtos
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="bg-gradient-to-r from-pink-500 to-purple-600 py-16">
+            <div class="container mx-auto px-4 sm:px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 heading-font">
+                    Receba Nossas Novidades
+                </h2>
+                <p class="text-pink-100 mb-8 max-w-2xl mx-auto">
+                    Seja a primeira a saber sobre lançamentos, promoções exclusivas e dicas de beleza.
+                </p>
+                <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="Seu melhor e-mail" 
+                           class="flex-1 px-6 py-4 rounded-xl border-0 focus:ring-4 focus:ring-white/20 transition-all duration-300"
+                           required>
+                    <button type="submit" class="bg-white text-pink-600 px-8 py-4 rounded-xl font-medium hover:shadow-lg transition-all duration-300">
+                        Inscrever-se
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Enhanced Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-gem text-white"></i>
+                        </div>
+                        <span class="text-2xl font-bold heading-font">Glow Essence</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Curadoria em Beleza e Estilo. Produtos premium selecionados para realçar sua beleza natural com qualidade incomparável.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/glow___.essence/" target
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Maquiagem - Glow Essence</title>
+    <meta name="description" content="Explore nossa coleção exclusiva de maquiagem premium. Base, batom, máscara de cílios e muito mais. Glow Essence - Curadoria em Beleza e Estilo.">
+    <meta name="keywords" content="maquiagem, base, batom, máscara de cílios, beleza, cosméticos, Parnaíba">
+    <link rel="icon" href="/assets/logo/logo_oficial.png" type="image/png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Catálogo de Maquiagem - Glow Essence">
+    <meta property="og:description" content="Descubra produtos de maquiagem de alta qualidade">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose-gold': '#E8B4B8',
+                        'dusty-rose': '#D4A574',
+                        'warm-beige': '#F5F2E8'
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-soft': 'pulse-soft 2s infinite',
+                        'slide-up': 'slide-up 0.6s ease-out'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        'pulse-soft': {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.02)' }
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        .heading-font { font-family: 'Playfair Display', serif; }
+
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px rgba(0,0,0,0.15); border-color: rgba(236, 72, 153, 0.2); }
+        .product-image { transition: transform 0.6s ease; overflow: hidden; }
+        .product-card:hover .product-image img { transform: scale(1.05); }
+
+        .btn-primary { background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .btn-primary:before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.5s; }
+        .btn-primary:hover:before { left: 100%; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(236, 72, 153, 0.4); }
+
+        .loading-skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: loading 1.5s infinite; }
+        @keyframes loading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+        .hero-gradient { background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #f3e8ff 100%); }
+        .glass-effect { backdrop-filter: blur(8px); background: rgba(255, 255, 255, 0.65); }
+
+        .menu-link { position: relative; overflow: hidden; }
+        .menu-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, #ec4899, #be185d); transition: width 0.3s ease; }
+        .menu-link:hover::after { width: 100%; }
+
+        /* small utility to visually clamp descriptions when needed */
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    </style>
+</head>
+<body class="antialiased bg-gradient-to-br from-pink-50 via-white to-purple-50">
+
+    <!-- Header with improved glass effect -->
+    <header class="glass-effect sticky top-0 z-50 border-b border-white/20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <nav class="flex justify-between items-center py-4">
+                <!-- Logo with animation -->
+                <a href="/Glowessense" class="group" aria-label="Glow Essence - Home">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                            <i class="fas fa-gem text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold heading-font bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Glow Essence</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <nav class="flex items-center space-x-8">
+                        <a href="/Glowessense" class="menu-link text-gray-700 hover:text-pink-600 transition-colors font-medium">Nossa Essência</a>
+                        <a href="#catalogo" class="menu-link text-gray-700 hover:text-pink-600 transition-colors font-medium">Catálogo</a>
+                        <a href="#contato" class="menu-link text-gray-700 hover:text-pink-600 transition-colors font-medium">Contato</a>
+                    </nav>
+
+                    <!-- Cart Button -->
+                    <button id="cart-button" class="relative p-2 hover:bg-pink-50 rounded-full transition-colors" aria-label="Carrinho de compras">
+                        <i class="fas fa-shopping-bag text-xl text-gray-700"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-pink-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate-pulse">3</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <button id="mobile-cart" class="relative p-2 hover:bg-pink-50 rounded-full transition-colors" aria-label="Carrinho de compras">
+                        <i class="fas fa-shopping-bag text-xl text-gray-700"></i>
+                        <span class="absolute -top-1 -right-1 bg-pink-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </button>
+                    <button id="mobile-menu-button" class="p-2 rounded-lg hover:bg-pink-50 transition-colors" aria-label="Menu">
+                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="/Glowessense" class="text-gray-700 hover:text-pink-600 transition-colors py-2 border-b border-gray-100">Nossa Essência</a>
+                    <a href="#catalogo" class="text-gray-700 hover:text-pink-600 transition-colors py-2 border-b border-gray-100">Catálogo</a>
+                    <a href="#contato" class="text-gray-700 hover:text-pink-600 transition-colors py-2">Contato</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with improved design -->
+        <section class="hero-gradient py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 text-center">
+                <div class="animate-slide-up">
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold heading-font mb-6">
+                        <span class="bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                            Catálogo de Maquiagem
+                        </span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+                        Explore nossa seleção curada de produtos premium para criar looks incríveis, do clássico ao moderno, com qualidade incomparável.
+                    </p>
+
+                    <!-- Filter buttons with improved styling -->
+                    <div class="flex flex-wrap justify-center gap-3 mb-8">
+                        <button class="filter-btn px-6 py-3 rounded-full bg-pink-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 font-medium" data-filter="all">
+                            Todos os Produtos
+                        </button>
+                        <button class="filter-btn px-6 py-3 rounded-full bg-white text-gray-700 border border-gray-200 hover:border-pink-300 hover:text-pink-600 transition-all duration-300 font-medium" data-filter="base">
+                            Base & Corretivo
+                        </button>
+                        <button class="filter-btn px-6 py-3 rounded-full bg-white text-gray-700 border border-gray-200 hover:border-pink-300 hover:text-pink-600 transition-all duration-300 font-medium" data-filter="olhos">
+                            Olhos
+                        </button>
+                        <button class="filter-btn px-6 py-3 rounded-full bg-white text-gray-700 border border-gray-200 hover:border-pink-300 hover:text-pink-600 transition-all duration-300 font-medium" data-filter="labios">
+                            Lábios
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section with improved layout -->
+        <section id="catalogo" class="py-16 md:py-20">
+            <div class="container mx-auto px-4 sm:px-6">
+                <!-- Loading skeleton (hidden by default) -->
+                <div id="loading-skeleton" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <div class="loading-skeleton h-96 rounded-2xl"></div>
+                    <div class="loading-skeleton h-96 rounded-2xl"></div>
+                    <div class="loading-skeleton h-96 rounded-2xl"></div>
+                    <div class="loading-skeleton h-96 rounded-2xl"></div>
+                </div>
+
+                <!-- Products Grid -->
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                    <!-- Product 1 -->
+                    <article class="product-card rounded-2xl overflow-hidden shadow-lg animate-float" data-category="base">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=500&fit=crop&crop=center" 
+                                 class="w-full h-80 object-cover transition-transform duration-500" 
+                                 alt="Base de Alta Cobertura" 
+                                 loading="lazy">
+                            <div class="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-medium">Novo</div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 heading-font">Base de Alta Cobertura</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">A nova base da Coleção Angel Wings, desenvolvida para trazer resistência, hidratação e viço à sua pele.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-1">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm">(4.8)</span>
+                                </div>
+                                <span class="text-lg font-bold text-pink-600">R$ 89,90</span>
+                            </div>
+                            <button onclick="addToCart('Base de Alta Cobertura', 89.90)" class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium relative overflow-hidden">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card rounded-2xl overflow-hidden shadow-lg" data-category="base" style="animation-delay: 0.1s">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="../assets/imgs/maquiagens/Base Líguida Soft Blend.jpg" 
+                                 class="w-full h-80 object-cover transition-transform duration-500" 
+                                 alt="Base Líquida Soft Blend" 
+                                 loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 heading-font">Base Líquida Soft Blend</h3>
+                            <p class="text-gray-600 text-sm mb-4">Base leve e fluida com cobertura média, garantindo acabamento natural e radiante.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-1">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="far fa-star text-sm"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm">(4.2)</span>
+                                </div>
+                                <span class="text-lg font-bold text-pink-600">R$ 69,90</span>
+                            </div>
+                            <button onclick="addToCart('Base Líquida Soft Blend', 69.90)" class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card rounded-2xl overflow-hidden shadow-lg" data-category="base" style="animation-delay: 0.2s">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="../assets/imgs/maquiagens/base líquida não é oleosa.jpg" class="w-full h-80 object-cover transition-transform duration-500" alt="Base Líquida Natural" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 heading-font">Base Líquida Natural</h3>
+                            <p class="text-gray-600 text-sm mb-4">Fixação perfeita com hidratação e cobertura homogênea, resistente e natural.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-1">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm">(4.9)</span>
+                                </div>
+                                <span class="text-lg font-bold text-pink-600">R$ 79,90</span>
+                            </div>
+                            <button onclick="addToCart('Base Líquida Natural', 79.90)" class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product 4 -->
+                    <article class="product-card rounded-2xl overflow-hidden shadow-lg" data-category="olhos" style="animation-delay: 0.3s">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="../assets/imgs/maquiagens/Máscara para cílios efeito NO PANDA com um BIG pincel curvado e super anatômico.jpg" class="w-full h-80 object-cover transition-transform duration-500" alt="Máscara para Cílios" loading="lazy">
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium">Bestseller</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 heading-font">Máscara para Cílios</h3>
+                            <p class="text-gray-600 text-sm mb-4">Máscara No Panda com pincel curvado para volume, definição e curvatura perfeita.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-1">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm">(4.7)</span>
+                                </div>
+                                <span class="text-lg font-bold text-pink-600">R$ 49,90</span>
+                            </div>
+                            <button onclick="addToCart('Máscara para Cílios', 49.90)" class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product 5 -->
+                    <article class="product-card rounded-2xl overflow-hidden shadow-lg" data-category="labios" style="animation-delay: 0.4s">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="../assets/imgs/maquiagens/Baton.jpg" class="w-full h-80 object-cover transition-transform duration-500" alt="Batom Premium" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 heading-font">Batom Premium</h3>
+                            <p class="text-gray-600 text-sm mb-4">Combinação ideal entre cobertura intensa e conforto, disponível em acabamentos mate e glossy.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-1">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm">(4.6)</span>
+                                </div>
+                                <span class="text-lg font-bold text-pink-600">R$ 39,90</span>
+                            </div>
+                            <button onclick="addToCart('Batom Premium', 39.90)" class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Product 6 -->
+                    <article class="product-card rounded-2xl overflow-hidden shadow-lg" data-category="base" style="animation-delay: 0.5s">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="../assets/imgs/maquiagens/Sérum Glow Melu Made In!.jpg" class="w-full h-80 object-cover transition-transform duration-500" alt="Sérum Glow" loading="lazy">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 heading-font">Sérum Glow</h3>
+                            <p class="text-gray-600 text-sm mb-4">Sérum inovador para pele naturalmente iluminada com brilho radiante e aspecto saudável.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-1">
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="fas fa-star text-sm"></i>
+                                        <i class="far fa-star text-sm"></i>
+                                    </div>
+                                    <span class="text-gray-500 text-sm">(4.3)</span>
+                                </div>
+                                <span class="text-lg font-bold text-pink-600">R$ 99,90</span>
+                            </div>
+                            <button onclick="addToCart('Sérum Glow', 99.90)" class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Adicionar ao Carrinho
+                            </button>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-12">
+                    <button id="load-more" class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-xl font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-plus mr-2"></i>
+                        Carregar Mais Produtos
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="bg-gradient-to-r from-pink-500 to-purple-600 py-16">
+            <div class="container mx-auto px-4 sm:px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 heading-font">Receba Nossas Novidades</h2>
+                <p class="text-pink-100 mb-8 max-w-2xl mx-auto">Seja a primeira a saber sobre lançamentos, promoções exclusivas e dicas de beleza.</p>
+                <form id="newsletter-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+                    <input id="newsletter-email" type="email" placeholder="Seu melhor e-mail" 
+                           class="flex-1 px-6 py-4 rounded-xl border-0 focus:ring-4 focus:ring-white/20 transition-all duration-300" required>
+                    <button type="submit" class="bg-white text-pink-600 px-8 py-4 rounded-xl font-medium hover:shadow-lg transition-all duration-300">Inscrever-se</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Enhanced Footer -->
+    <footer id="contato" class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-gem text-white"></i>
+                        </div>
+                        <span class="text-2xl font-bold heading-font">Glow Essence</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">Curadoria em Beleza e Estilo. Produtos premium selecionados para realçar sua beleza natural com qualidade incomparável.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/glow___.essence/" target="_blank" aria-label="Instagram" class="text-gray-300 hover:text-white text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5586999616547" target="_blank" aria-label="WhatsApp" class="text-gray-300 hover:text-white text-2xl"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Atendimento</h4>
+                    <p class="text-gray-400">Seg - Sex: 08:00 - 18:00<br>Suporte via WhatsApp</p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Endereço</h4>
+                    <p class="text-gray-400">Parnaíba - PI, Brasil</p>
+                </div>
+            </div>
+
+            <div class="text-center border-t border-white/10 pt-8">
+                <p class="text-gray-400">&copy; 2025 Glow Essence. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating back button -->
+    <a href="/Glowessense" class="fixed bottom-6 left-6 bg-gray-800 text-white p-3 rounded-full shadow-lg z-50 hover:bg-gray-700 transition-all group">
+        <i class="fas fa-arrow-left text-xl"></i>
+        <span class="absolute left-full top-1/2 transform -translate-y-1/2 ml-2 bg-gray-800 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Voltar ao início</span>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton && mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                document.querySelectorAll('#products-grid [data-category]').forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+                // visual active state
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('ring-2','ring-pink-300'));
+                btn.classList.add('ring-2','ring-pink-300');
+            });
+        });
+
+        // Simple cart action that opens WhatsApp and stores last items in localStorage
+        function addToCart(name, price) {
+            try {
+                const numero = '5586999616547';
+                const mensagem = `Olá! Tenho interesse no ${name} (R$ ${price.toFixed(2)}). Gostaria de mais informações.`;
+                // update local cart (keeps only small list)
+                const cart = JSON.parse(localStorage.getItem('glow_cart') || '[]');
+                cart.push({ name, price, date: new Date().toISOString() });
+                localStorage.setItem('glow_cart', JSON.stringify(cart));
+                // update cart count
+                const countEl = document.getElementById('cart-count');
+                if (countEl) { countEl.textContent = String(cart.length); }
+                // open whatsapp
+                const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+                window.open(url, '_blank');
+            } catch (err) {
+                console.error(err);
+                alert('Erro ao adicionar ao carrinho. Tente novamente.');
+            }
+        }
+
+        // Load more: clones visible products (simple demo)
+        document.getElementById('load-more').addEventListener('click', () => {
+            const grid = document.getElementById('products-grid');
+            const existing = Array.from(grid.children).slice(0, 3); // clone first 3
+            existing.forEach(node => {
+                const clone = node.cloneNode(true);
+                // remove potential duplicate event handlers issues by cloning and reassigning onclicks
+                const btn = clone.querySelector('button[onclick]');
+                if (btn) {
+                    const match = btn.getAttribute('onclick').match(/addToCart\('(.+)',\s*(\d+\.?\d*)\)/);
+                    if (match) {
+                        const pname = match[1];
+                        const pprice = parseFloat(match[2]);
+                        btn.setAttribute('onclick', `addToCart('${pname}', ${pprice})`);
+                    }
+                }
+                grid.appendChild(clone);
+            });
+            // small feedback
+            document.getElementById('load-more').textContent = 'Mais produtos carregados';
+            setTimeout(() => { document.getElementById('load-more').textContent = 'Carregar Mais Produtos'; }, 1500);
+        });
+
+        // Newsletter form
+        document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('newsletter-email').value;
+            // aqui você pode enviar para seu endpoint. Por enquanto apenas demo
+            alert(`Obrigado! ${email} inscrito com sucesso.`);
+            document.getElementById('newsletter-form').reset();
+        });
+
+        // small accessibility: ensure images have alt and lazy loading
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => { img.decoding = 'async'; });
+    </script>
+
+</body>
+</html>

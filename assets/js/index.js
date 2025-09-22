@@ -22,46 +22,7 @@ AOS.init({
         // Efeito de scroll no header
         window.addEventListener('scroll', function() {
         const scrollPosition = window.scrollY;
-
-
-        // const header = document.getElementById("header_main");
-        // // Inicializa com header transparente
-        // header.classList.add('header-transparent');
-        
-        // // Efeito de transparência no header
-        // if (scrollPosition > 100) {
-        //     header.classList.add('header-scrolled');
-        //     header.classList.remove('header-transparent');
-        // } else {
-        //     header.classList.add('header-transparent');
-        //     header.classList.remove('header-scrolled');
-        // }
-        
-        // // Ativar link correspondente à seção visível
-        // sections.forEach(section => {
-        //     const sectionTop = section.offsetTop - 100;
-        //     const sectionHeight = section.offsetHeight;
-        //     const sectionId = section.getAttribute('id');
-            
-        //     if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        //         navLinks.forEach(link => {
-        //             link.classList.remove('section-active');
-        //             if (link.getAttribute('href') === `#${sectionId}`) {
-        //                 link.classList.add('section-active');
-        //             }
-        //         });
-        //     }
-        // });
     });
-
-
-    // Lógica para o menu do
-    // (Removido: já declarado anteriormente)
-
-    
-    ;
-    
-    // Ativa o link da primeira seção por padrão
     if (window.location.hash) {
         document.querySelector(`header nav a[href="${window.location.hash}"]`).classList.add('section-active');
     } else {

@@ -47,6 +47,13 @@ h1, h2, h3, h4, .font-serif {
     transform: scale(1.05);
 }
 
+.menu-link.active::after {
+            width: 100% !important;
+        }
+        .menu-link.active {
+            color: black;
+        }
+
 .link-ativo {
 color: black;
 }

@@ -51,13 +51,39 @@
             background-color: #2D2D2D;
             color: #FFFFFF;
         }
-        .product-card {
-            background-color: #F7F5F2;
+
+        .btn-primary{
+            background-color: #DD3E8A;
             transition: all 0.4s ease;
+            
+        }
+
+        .btn-primary:hover:before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(236, 72, 153, 0.4);
+        }
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
+            border: 1px solid rgba(0,0,0,0.05);
         }
         .product-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border-color: rgba(236, 72, 153, 0.2);
+        }
+
+        .product-image {
+            transition: transform 1s ease;
+            overflow: hidden;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
         }
 
         .menu-link.active::after {
@@ -66,6 +92,8 @@
         .menu-link.active {
             color: black;
         }
+
+        .hero-gradient { background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #f3e8ff 100%); }
 
     </style>
 </head>
@@ -113,162 +141,364 @@
             <button class="px-4 py-2 rounded-full border hover:bg-rose-50">Acessórios</button>
         </div> -->
         <!-- Catalog Section -->
-        <section id="catalogo" class="py-16 md:py-20">
-            <div class="container mx-auto px-6">
-                 <div class="text-center mb-16" data-aos="fade-up">
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold">Catálogo de Maquiagem</h1>
-                    <p class="text-lg text-gray-500 max-w-2xl mx-auto mt-4">Explore nossa seleção de produtos para criar looks incríveis, do clássico ao moderno.</p>
+         <section class="hero-gradient py-16 md:py-24">
+            <div class="container mx-auto px-4 sm:px-6 text-center">
+                <div class="animate-slide-up">
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold heading-font mb-6">
+                        <span class="bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                            Catálogo de Maquiagem
+                        </span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+                        Explore nossa seleção curada de produtos premium para criar looks incríveis, do clássico ao moderno, com qualidade incomparável.
+                    </p>
+
+                    <!-- Filter buttons with improved styling
+                    <div class="flex flex-wrap justify-center gap-3 mb-8">
+                        <button class="filter-btn px-6 py-3 rounded-full bg-pink-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 font-medium" data-filter="all">
+                            Todos os Produtos
+                        </button>
+                        <button class="filter-btn px-6 py-3 rounded-full bg-white text-gray-700 border border-gray-200 hover:border-pink-300 hover:text-pink-600 transition-all duration-300 font-medium" data-filter="base">
+                            Base & Corretivo
+                        </button>
+                        <button class="filter-btn px-6 py-3 rounded-full bg-white text-gray-700 border border-gray-200 hover:border-pink-300 hover:text-pink-600 transition-all duration-300 font-medium" data-filter="olhos">
+                            Olhos
+                        </button>
+                        <button class="filter-btn px-6 py-3 rounded-full bg-white text-gray-700 border border-gray-200 hover:border-pink-300 hover:text-pink-600 transition-all duration-300 font-medium" data-filter="labios">
+                            Lábios
+                        </button>
+                    </div> -->
                 </div>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            </div>
+        </section>
+
+        <!-- Products Section with improved layout -->
+        <section id="catalogo" class="py-16 md:py-20">
+            <div class="container mx-auto px-4 sm:px-6">
+
+                <!-- product grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     
                     <!-- Produto 1 -->
                     <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                        <img src="../assets/imgs/maquiagens/A Base de Alta Cobertura é a nova base da Coleção Angel Wing.jpg" class="w-full object-cover h-[525px] object-contain" alt="Base de Alta Cobertura">
-                        <div class="p-8 text-center">
-                            <h3 class="text-2xl mb-1">Base de Alta Cobertura</h3>
-                            <p class="text-gray-600 mb-6 text-sm h-12">A nova base da Coleção Angel Wings, que foi desenvolvida para trazer uma pele ainda mais resistente, intacta e à prova d’água, além de hidratação e viço.</p>
-                            <a onclick="enviarWhatsApp('Base de Alta Cobertura')" target="_blank" class="btn-outline py-2 px-8 rounded-full text-sm cursor-pointer">
-                                Comprar
-                            </a>
+                        <div class="product-image relative overflow-hidden">
+                            <img src="../assets/imgs/maquiagens/A Base de Alta Cobertura é a nova base da Coleção Angel Wing.jpg" class="w-full object-cover transition-transform duration-500" alt="Base de Alta Cobertura">
+
+                            <div class="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Novo
+                            </div>
+
+                            <!-- effect of background in hover -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+
                         </div>
-                    </div>
-                    
-                    <!-- Produto 2 -->
-                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                        <img src="../assets/imgs/maquiagens/Base Líguida Soft Blend.jpg" class="w-full object-cover h-[525px]" alt="Base Líguida Soft Blend">
-                        <div class="p-8 text-center">
-                            <h3 class="text-2xl mb-1">Base Líguida Soft Blend</h3>
-                            <p class="text-gray-600 mb-6 text-sm h-12">Base leve e fluida, com cobertura média que se adapta ao tom da pele, garantindo acabamento natural, radiante e uniforme.</p>
-                            <a onclick="enviarWhatsApp('Base Líguida Soft Blend')" target="_blank" class="btn-outline py-2 px-8 rounded-full text-sm cursor-pointer">
-                                Comprar
-                            </a>
+                        <div class="p-6">
+                                <h3 class="text-4xl font-semibold mb-2 heading-font">Base de Alta Cobertura</h3>
+                                <p class="text-gray-600 text-sm mb-4 line-clamp-3">A nova base da Coleção Angel Wings, que foi desenvolvida para trazer uma pele ainda mais resistente, intacta e à prova d’água, além de hidratação e viço.</p>
+                                <button onclick="enviarWhatsApp('Base de Alta Cobertura')" target="_blank" class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium relative overflow-hidden">
+                                    Comprar
+                                </button>
                         </div>
                     </div>
 
-                    <!-- Produto 3 -->
-                    <div class="product-card rounded-lg overflow-hidden " data-aos="fade-up" data-aos-delay="300">
-                        <img src="../assets/imgs/maquiagens/base líquida não é oleosa.jpg" class="w-full  object-cover" alt="base líquida">
-                        <div class="p-8 text-center">
-                            <h3 class="text-2xl mb-1">Base líquida</h3>
-                            <p class="text-gray-600 mb-6 text-sm h-12">Garante fixação perfeita, hidratação e cobertura homogênea, com acabamento impecável, resistente à luz intensa e de aparência natural e uniforme.</p>
-                            <a onclick="enviarWhatsApp('base líquida')" target="_blank" class="btn-outline py-2 px-8 rounded-full text-sm cursor-pointer">
-                               Comprar
-                            </a>
+
+                    <!-- Produto 2 -->
+                     <div class="product-card rounded-lg overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-image relative overflow-hidden flex-grow flex justify-center">
+                            <img src="../assets/imgs/maquiagens/O Corretivo Líquido camuflagem Matte Color Smart Dapop.jpg" alt="Paleta de Blush, Contorno e Iluminador Mood da Ruby Rose" class="w-full object-cover transition-transform duration-500" alt="Corretivo Líquido camuflagem Matte Color Smart Dapop">
+
+                            <div class="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Novo
+                            </div>
+
+                            <!-- effect of background in hover -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+
                         </div>
+                            <div class="p-6 flex flex-col justify-between w-full">
+                                <h3 class="text-4xl font-semibold mb-2 heading-font">Corretivo Líquido camuflagem</h3>
+                                <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                                    Ideal para disfarçar olheiras, manchas e imperfeições, não craquela e tem longa duração.
+                                </p>
+                                <button onclick="enviarWhatsApp('Corretivo Líquido camuflagem Matte Color Smart Dapop')" target="_blank"
+                                    class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium relative overflow-hidden">
+                                    Comprar
+                                </button>
+                            </div>
+                    </div>
+                    
+
+
+                    <!-- Produto 3 -->
+                    <div class="product-card rounded-lg overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-image relative overflow-hidden flex-grow flex justify-center">
+                            <img src="../assets/imgs/maquiagens/base líquida não é oleosa.jpg" class="w-full object-cover transition-transform duration-500" alt="Base de Alta Cobertura">
+
+                            <div class="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Novo
+                            </div>
+
+                            <!-- effect of background in hover -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+
+                        </div>
+                            <div class="p-6 flex flex-col justify-between w-full">
+                                <h3 class="text-4xl font-semibold mb-2 heading-font">Base líquida</h3>
+                                <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                                    Garante fixação perfeita, hidratação e cobertura homogênea, com acabamento impecável, resistente à luz intensa e
+                                    de aparência natural e uniforme.
+                                </p>
+                                <button onclick="enviarWhatsApp('Base líquida')" target="_blank"
+                                    class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium relative overflow-hidden">
+                                    Comprar
+                                </button>
+                            </div>
                     </div>
 
                     <!-- Produto 4 -->
-                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                        <img src="../assets/imgs/maquiagens/Base Matte Payot Alta Cobertura.jpg" class="w-full object-cover" alt="Base Matte Payot Alta Cobertura">
-                        <div class="p-8 text-center">
-                            <h3 class="text-2xl mb-1">Base Matte Payot Alta Cobertura</h3>
-                            <p class="text-gray-600 mb-6 text-sm h-12"> possui fórmula de alta cobertura com acabamento matte perfeito. Textura cremosa, longa duração, resistência a água e não transfere. Desliza facilmente na pele e uniformiza o tom. Proporciona uma cobertura natural.</p>
-                            <a onclick="enviarWhatsApp('Base Matte Payot Alta Cobertura')" target="_blank" class="btn-outline py-2 px-8 rounded-full text-sm cursor-pointer">
-                               Comprar
-                            </a>
+                    <div class="product-card rounded-lg overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-image relative overflow-hidden flex-grow flex justify-center">
+                            <img src="../assets/imgs/maquiagens/Base Matte Payot Alta Cobertura.jpg" class="w-full object-cover transition-transform duration-500" alt="Base de Alta Cobertura">
+
+                            <div class="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Novo
+                            </div>
+
+                            <!-- effect of background in hover -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+
                         </div>
+                            <div class="p-6 flex flex-col justify-between w-full">
+                                <h3 class="text-4xl font-semibold mb-2 heading-font">Base Matte Payot Alta Cobertura</h3>
+                                <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                                    Possui fórmula de alta cobertura com acabamento matte perfeito. Textura cremosa, longa duração, resistência a água e não transfere. Desliza facilmente na pele e uniformiza o tom. Proporciona uma cobertura natural.
+                                </p>
+                                <button onclick="enviarWhatsApp('Base Matte Payot Alta Cobertura')" target="_blank"
+                                    class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium relative overflow-hidden">
+                                    Comprar
+                                </button>
+                            </div>
                     </div>
 
                     <!-- Produto 5 -->
-                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                        <img src="../assets/imgs/maquiagens/Base para maquiagens.jpg" class="w-full object-cover" alt="Base para maquiagens">
-                        <div class="p-8 text-center">
-                            <h3 class="text-2xl mb-1">Base para maquiagens</h3>
-                            <p class="text-gray-600 mb-6 text-sm h-12">Ideal para disfarçar, olheiras e linhas finas, proporcionando um acabamento impecável e de longa duração. Alta cobertura desliza facilmente sobre a pele, oferecendo um acabamento natural e uniforme, sem acumular ou craquelar. </p>
-                            <a onclick="enviarWhatsApp('Base para maquiagens')" target="_blank" class="btn-outline py-2 px-8 rounded-full text-sm cursor-pointer">
-                               Comprar
-                            </a>
+                    <div class="product-card rounded-lg overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-image relative overflow-hidden flex-grow flex justify-center">
+                            <img src="../assets/imgs/maquiagens/Base para maquiagens.jpg" class="w-full object-cover transition-transform duration-500" alt="Base para maquiagens">
+
+                            <div class="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Novo
+                            </div>
+
+                            <!-- effect of background in hover -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+
+                        </div>
+                            <div class="p-6 flex flex-col justify-between w-full">
+                                <h3 class="text-4xl font-semibold mb-2 heading-font">Base para maquiagens</h3>
+                                <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                                    Ideal para disfarçar, olheiras e linhas finas, proporcionando um acabamento impecável e de longa duração.
+                                </p>
+                                <button onclick="enviarWhatsApp('Base para maquiagens')" target="_blank"
+                                    class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium relative overflow-hidden">
+                                    Comprar
+                                </button>
+                            </div>
+                    </div>
+
+                    <!-- Produto 6-->
+                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-image relative overflow-hidden">
+                            <img src="../assets/imgs/maquiagens/Gotas Fix.jpg" class="w-full object-cover transition-transform duration-500" alt="Gotas Fix">
+
+                            <div class="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Novo
+                            </div>
+
+                            <!-- effect of background in hover -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+
+                        </div>
+                        <div class="p-6 flex flex-col">
+                                <h3 class="text-4xl font-semibold mb-2 heading-font">Gotas Fix</h3>
+                                <p class="text-gray-600 text-sm mb-4 line-clamp-3">Recupera maquiagens secas, aumenta a durabilidade e torna os produtos à prova d’água</p>
+                                <button onclick="enviarWhatsApp('Gotas Fix')" target="_blank" class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium relative overflow-hidden">
+                                    Comprar
+                                </button>
                         </div>
                     </div>
 
-                    <!-- Produto 6 -->
-                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                        <img src="../assets/imgs/maquiagens/Gotas Fix.jpg" alt="Gotas Fix">
-                        <div class="p-8 text-center">
-                            <h3 class="text-2xl mb-1">Gotas Fix</h3>
-                            <p class="text-gray-600 mb-6 text-sm h-12">Gotas Fix Blindagem: recupera maquiagens secas, aumenta a durabilidade e torna os produtos à prova d’água..</p>
-                            <a onclick="enviarWhatsApp('Gota fix')" target="_blank" class="btn-outline py-2 px-8 rounded-full text-sm cursor-pointer">
 
-                               Comprar
-                            </a>
-                        </div>
-                    </div>
+                   <!-- Produto 7 -->
+                    <div class="product-card rounded-lg overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-image relative overflow-hidden flex-grow flex justify-center">
+                            <img src="../assets/imgs/maquiagens/Máscara para cílios efeito NO PANDA com um BIG pincel curvado e super anatômico.jpg" alt="Máscara para cílios" class="w-full object-cover transition-transform duration-500" alt="Base para maquiagens">
 
-                    <!-- Produto 7 -->
-                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                        <img src="../assets/imgs/maquiagens/Máscara para cílios efeito NO PANDA com um BIG pincel curvado e super anatômico.jpg" alt="Máscara para cílios">
-                        <div class="p-8 text-center">
-                            <h3 class="text-2xl mb-1">Máscara para cílios</h3>
-                            <p class="text-gray-600 mb-6 text-sm h-12">Máscara de cílios No Panda: pincel curvado que garante volume, definição e curvatura, com fórmula que não borra e sai facilmente com água morna.</p>
-                            <a onclick="enviarWhatsApp('Máscara para cílios')" target="_blank" class="btn-outline py-2 px-8 rounded-full text-sm cursor-pointer">
-                               Comprar
-                            </a>
+                            <div class="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Novo
+                            </div>
+
+                            <!-- effect of background in hover -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+
                         </div>
+                            <div class="p-6 flex flex-col justify-between w-full">
+                                <h3 class="text-4xl font-semibold mb-2 heading-font">Máscara para cílios</h3>
+                                <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                                    Máscara de cílios No Panda: pincel curvado que garante volume, definição e curvatura, com fórmula que não borra e sai facilmente com água morna
+                                </p>
+                                <button onclick="enviarWhatsApp('Máscara para cílios')" target="_blank"
+                                    class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium relative overflow-hidden">
+                                    Comprar
+                                </button>
+                            </div>
                     </div>
 
                     <!-- Produto 8 -->
-                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                        <img src="../assets/imgs/maquiagens/O Corretivo Líquido camuflagem Matte Color Smart Dapop.jpg" alt="O Corretivo Líquido camuflagem Matte Color Smart Dapop">
-                        <div class="p-8 text-center">
-                            <h3 class="text-2xl mb-1">O Corretivo Líquido camuflagem Matte Color Smart Dapop</h3>
-                            <p class="text-gray-600 mb-6 text-sm h-12">Cobertura média a alta, acabamento matte sequinho, disfarça olheiras e manchas, com textura leve que espalha fácil e não craquela, garantindo longa duração.</p>
-                            <a onclick="enviarWhatsApp('O Corretivo Líquido camuflagem Matte Color Smart Dapop')" target="_blank" class="btn-outline py-2 px-8 rounded-full text-sm cursor-pointer">
-                               Comprar
-                            </a>
+                    <div class="product-card rounded-lg overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-image relative overflow-hidden flex-grow flex justify-center">
+                            <img src="../assets/imgs/maquiagens/Baton.jpg"" alt="Baton kit" class="w-full object-cover transition-transform duration-500" alt="Baton kit">
+
+                            <div class="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Novo
+                            </div>
+
+                            <!-- effect of background in hover -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+
                         </div>
+                            <div class="p-6 flex flex-col justify-between w-full">
+                                <h3 class="text-4xl font-semibold mb-2 heading-font">Baton kit</h3>
+                                <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                                    Combinação ideal entre cobertura intensa, conforto absoluto e acabamentos versáteis.
+                                </p>
+                                <button onclick="enviarWhatsApp('Baton kit')" target="_blank"
+                                    class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium relative overflow-hidden">
+                                    Comprar
+                                </button>
+                            </div>
                     </div>
 
                     <!-- Produto 9 -->
-                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                        <img src="../assets/imgs/maquiagens/Paleta de Blush, Contorno e Iluminador Mood da Ruby Rose .jpg" alt="Paleta de Blush, Contorno e Iluminador Mood da Ruby Rose">
-                        <div class="p-8 text-center">
-                            <h3 class="text-2xl mb-1">Paleta de Blush, Contorno e Iluminador Mood da Ruby Rose</h3>
-                            <p class="text-gray-600 mb-6 text-sm h-12">Multifuncional com 2 blushes, 1 contorno e 1 iluminador, em tons versáteis que valorizam diferentes peles e permitem criar looks incríveis.</p>
-                            <a onclick="enviarWhatsApp('Paleta de Blush, Contorno e Iluminador Mood da Ruby Rose')" target="_blank" class="btn-outline py-2 px-8 rounded-full text-sm cursor-pointer">
-                               Comprar
-                            </a>
+                    <div class="product-card rounded-lg overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-image relative overflow-hidden flex-grow flex justify-center">
+                            <img src="../assets/imgs/maquiagens/Pó Compacto Ultrafino.jpg" alt="Pó Compacto Ultrafino" class="w-full object-cover transition-transform duration-500" alt="Base para maquiagens">
+
+                            <div class="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Novo
+                            </div>
+
+                            <!-- effect of background in hover -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+
                         </div>
+                            <div class="p-6 flex flex-col justify-between w-full">
+                                <h3 class="text-4xl font-semibold mb-2 heading-font">Pó Compacto Ultrafino</h3>
+                                <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                                    Com uma paleta diversa e completa, com 12 tons que servem para todos os tipos e tons de pele. Com alta cobertura e acabamento natural, você sente que a cor e a textura são reais!
+                                </p>
+                                <button onclick="enviarWhatsApp('Pó Compacto Ultrafino')" target="_blank"
+                                    class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium relative overflow-hidden">
+                                    Comprar
+                                </button>
+                            </div>
                     </div>
 
                     <!-- Produto 10 -->
-                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                        <img src="../assets/imgs/maquiagens/Sérum Glow Melu Made In!.jpg" alt="Sérum Glow Melu Made In!">
-                        <div class="p-8 text-center">
-                            <h3 class="text-2xl mb-1">Sérum Glow Melu Made In!</h3>
-                            <p class="text-gray-600 mb-6 text-sm h-12">A chave para uma pele naturalmente iluminada e com um toque sutil. Este sérum inovador da MELU foi desenvolvido para proporcionar um brilho radiante, ideal para quem busca realçar a beleza natural com um aspecto saudável e vibrante.</p>
-                            <a onclick="enviarWhatsApp('Sérum Glow Melu Made In!')" target="_blank" class="btn-outline py-2 px-8 rounded-full text-sm cursor-pointer">
-                               Comprar
-                            </a>
+                    <div class="product-card rounded-lg overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-image relative overflow-hidden flex-grow flex justify-center">
+                            <img src="../assets/imgs/maquiagens/Sérum Glow Melu Made In!.jpg" alt="Máscara para cílios" class="w-full object-cover transition-transform duration-500" alt="Sérum Glow Melu Made In!">
+
+                            <div class="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Novo
+                            </div>
+
+                            <!-- effect of background in hover -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+
+                        </div>
+                            <div class="p-6 flex flex-col justify-between w-full">
+                                <h3 class="text-4xl font-semibold mb-2 heading-font">Sérum Glow Melu Made In!</h3>
+                                <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                                    A chave para uma pele naturalmente iluminada e com um toque sutil.
+                                </p>
+                                <button onclick="enviarWhatsApp('Sérum Glow Melu Made In!')" target="_blank"
+                                    class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium relative overflow-hidden">
+                                    Comprar
+                                </button>
+                            </div>
+                    </div>
+
+                    <!-- Produto 11 -->
+                    <div class="product-card rounded-lg overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-image relative overflow-hidden flex-grow flex justify-center">
+                            <img src="../assets/imgs/maquiagens/Paleta de Blush, Contorno e Iluminador Mood da Ruby Rose .jpg" alt="Paleta de Blush, Contorno e Iluminador Mood da Ruby Rose" class="w-full object-cover transition-transform duration-500" alt="Base para maquiagens">
+
+                            <div class="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Novo
+                            </div>
+
+                            <!-- effect of background in hover -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+
+                        </div>
+                            <div class="p-6 flex flex-col justify-between w-full">
+                                <h3 class="text-4xl font-semibold mb-2 heading-font">Paleta de Blush, Contorno e Iluminador Mood da Ruby Rose</h3>
+                                <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                                    Multifuncional com 2 blushes, 1 contorno e 1 iluminador, em tons versáteis que valorizam diferentes peles e permitem criar looks incríveis.
+                                </p>
+                                <button onclick="enviarWhatsApp('Paleta de Blush, Contorno e Iluminador Mood da Ruby Rose')" target="_blank"
+                                    class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium relative overflow-hidden">
+                                    Comprar
+                                </button>
+                            </div>
+                    </div>
+
+                    <!-- Produto 12 -->
+                    <div class="product-card rounded-lg overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-image relative overflow-hidden flex-grow flex justify-center">
+                            <img src="../assets/imgs/maquiagens/base_maquiagem.jpg" alt="base_maquiagem" class="w-full object-cover transition-transform duration-500" alt="Base para maquiagens">
+
+                            <div class="absolute top-4 left-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Novo
+                            </div>
+
+                            <!-- effect of background in hover -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+
+                        </div>
+                            <div class="p-6 flex flex-col justify-between w-full">
+                                <h3 class="text-4xl font-semibold mb-2 heading-font">base_maquiagem</h3>
+                                <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                                    é um fixador de maquiagem de alta performance, formulado com alta concentração de resina, que proporciona maior durabilidade e resistência para a make.
+                                </p>
+                                <button onclick="enviarWhatsApp('base de maquiagem')" target="_blank"
+                                    class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium relative overflow-hidden">
+                                    Comprar
+                                </button>
+                            </div>
+                    </div>
+
+
+                    <!-- Produto 13 -->
+
+                    <div class="product-card rounded-lg overflow-hidden flex flex-col justify-between items-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-image relative overflow-hidden flex-grow flex justify-center">
+                            <img src="../assets/imgs/maquiagens/Base Líguida Soft Blend.jpg" class=" transition-transform duration-500 w-full max-w-sm " alt="Base de Alta Cobertura">
+
+                            <!-- effect of background in hover -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+
+                        </div>
+                        <div class="p-6">
+                                <h3 class="text-4xl font-semibold mb-2 heading-font">Base Líguida Soft Blend</h3>
+                                <p class="text-gray-600 text-sm mb-4 line-clamp-3">Base leve e fluida, com cobertura média que se adapta ao tom da pele, garantindo acabamento natural, radiante e uniforme.</p>
+                                <button onclick="enviarWhatsApp('Base Líguida Soft Blend')" target="_blank" class="btn-primary w-full py-3 px-6 rounded-xl text-white font-medium relative overflow-hidden">
+                                    Comprar
+                                </button>
                         </div>
                     </div>
 
-                     <!-- Produto 11 -->
-                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                        <img src="../assets/imgs/maquiagens/Pó Compacto Ultrafino.jpg" alt="Pó Compacto Ultrafino">
-                        <div class="p-8 text-center">
-                            <h3 class="text-2xl mb-1">Pó Compacto Ultrafino</h3>
-                            <p class="text-gray-600 mb-6 text-sm h-12">Com uma paleta diversa e completa, com 12 tons que servem para todos os tipos e tons de pele. Com alta cobertura e acabamento natural, você sente que a cor e a textura são reais!</p>
-                            <a onclick="enviarWhatsApp('Pó Compacto Ultrafino')" target="_blank" class="btn-outline py-2 px-8 rounded-full text-sm cursor-pointer">
-                               Comprar
-                            </a>
-                        </div>
-                    </div>
-
-                     <!-- Produto 12 -->
-                    <div class="product-card rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                        <img src="../assets/imgs/maquiagens/Baton.jpg" alt="Baton">
-                        <div class="p-8 text-center">
-                            <h3 class="text-2xl mb-1">Baton</h3>
-                            <p class="text-gray-600 mb-6 text-sm h-12">
-                                Combinação ideal entre cobertura intensa, conforto absoluto e acabamentos versáteis.
-                                Disponível em dois acabamentos: sofisticado acabamento mate para um visual suave e
-                        sem brilho, ou o acabamento glossy para um toque luminoso e brilhante.</p>
-                            <a onclick="enviarWhatsApp('Baton')" target="_blank" class="btn-outline py-2 px-8 rounded-full text-sm cursor-pointer">
-                               Comprar
-                            </a>
-                        </div>
-                    </div>
+                    
 
                 </div>
             </div>
@@ -319,7 +549,7 @@
 
         function enviarWhatsApp(produto) {
         const numero = "5586999616547";
-        const mensagem = `Olá! Tenho interesse no ${produto}!`;
+        const mensagem = `Olá, Cliquei no Saiba mais do site da Glow e queria saber mais informações sobre ${produto}!`;
         const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
         window.open(url, '_blank');
         }
